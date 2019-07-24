@@ -3,13 +3,11 @@ SELECT employees.emp_no, last_name, first_name, gender, salary
 FROM employees
 JOIN salary ON
 employees.emp_no = salary.emp_no
-ORDER BY employees.emp_no
-;
+ORDER BY employees.emp_no;
 -- List employees who were hired in 1986. --
 SELECT emp_no, first_name, last_name, hire_date
 FROM employees
-WHERE CAST (hire_date AS text) LIKE '%86%'
-;
+WHERE CAST (hire_date AS text) LIKE '%86%';
 -- List the manager of each department with the following information: department number, department name, the manager's employee number, -- 
 -- last name, first name, and start and end employment dates. --
 SELECT dept_manager.dept_no, departments.dept_name, dept_manager.emp_no, employees.last_name, 
@@ -25,7 +23,8 @@ FROM dept_emp
 JOIN employees
 ON dept_emp.emp_no = employees.emp_no
 JOIN departments
-ON dept_emp.dept_no = departments.dept_no;
+ON dept_emp.dept_no = departments.dept_no
+ORDER BY employees.emp_no;
 -- List all employees whose first name is "Hercules" and last names begin with "B." --
 SELECT *
 FROM employees
