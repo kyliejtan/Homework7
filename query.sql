@@ -1,8 +1,9 @@
 -- List the following details of each employee: employee number, last name, first name, gender, and salary. --
 SELECT employees.emp_no, last_name, first_name, gender, salary
 FROM employees
-INNER JOIN salary ON
+JOIN salary ON
 employees.emp_no = salary.emp_no
+ORDER BY employees.emp_no
 ;
 -- List employees who were hired in 1986. --
 SELECT emp_no, first_name, last_name, hire_date
@@ -52,8 +53,3 @@ SELECT employees.last_name, COUNT(employees.last_name)
 FROM employees
 GROUP BY employees.last_name
 ORDER BY COUNT(employees.last_name) DESC;
-
-
-
-
-
